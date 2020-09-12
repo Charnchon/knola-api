@@ -30,8 +30,9 @@ class UserUtil {
 
     async create(request,references) {
         const {user_id} =  await this._User.create(request.body)
+        const {user_password} =  await this._User.query('user_password').where({user_id:user_id})
         const users = this._User.query().where({user_id:user_id})
-        const hashPassword = await Hash.make(user_password)
+        const hashPassword = await Hash.make({user_password})
         return this._withReferences(users,references).fetch().then(response => response.first())
     }
 
