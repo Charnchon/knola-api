@@ -8,6 +8,19 @@ class Blog extends Model {
     static get primaryKey() {
         return 'blog_id'
     }
+
+    comment(){
+        return this.hasMany("App/Models/Comment")
+    }
+
+    user() { 
+        return this.belongsTo("App/Models/User")
+    }
+
+    tag() { 
+        return this.belongsTo("App/Models/Tag")
+    }
+
     static get createdAtColumn() {
         return null
     }
@@ -15,6 +28,7 @@ class Blog extends Model {
     static get updatedAtColumn() {
         return null
     }
+    
     
 }
 
