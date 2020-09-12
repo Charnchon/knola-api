@@ -2,6 +2,7 @@
 
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
 const Model = use('Model')
+const Hash = use('Hash')
 
 class User extends Model {
     
@@ -15,6 +16,11 @@ class User extends Model {
     static get updatedAtColumn() {
         return null
     }
+
+    static boot () {
+        super.boot()
+        this.addHook('beforeCreate', 'UserHook.hashPassword')
+      }
     
 }
 
