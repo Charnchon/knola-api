@@ -8,9 +8,10 @@ class CreateCommentSchema extends Schema {
     this.create('comments', (table) => {
       table.increments("comment_id")
       table.string("comment_content")
-      table.integer("user_id").unsigned().notNullable()
-      table.integer("blog_id").unsigned().notNullable()
       table.timestamp("comment_date").default(this.fn.now())
+      table.timestamps()
+      table.integer("user_id")
+      table.integer("blog_id").unsigned()
       table.foreign("blog_id").references("blogs.blog_id").onDelete("CASCADE").onUpdate("CASCADE")
 
     })
