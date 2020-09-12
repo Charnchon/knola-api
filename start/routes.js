@@ -19,3 +19,17 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.group(() => {
+
+  Route.resource("/users", "UserController")
+  Route.resource("/tags", "TagController")
+  Route.resource("/blogs", "BlogController")
+  Route.resource("/comments", "CommentController")
+
+  // Route.get("/subjects/:id/teacher", "SubjectController.showTeacher")
+  // Route.get("/subjects/:id/enrollment", "SubjectController.showEnrollment")
+
+  // Route.get("/students/:id/group", "StudentController.showGroup")
+
+}).prefix("api/v1")
