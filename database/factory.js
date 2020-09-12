@@ -37,7 +37,9 @@ Factory.blueprint("App/Models/Tag" , (faker) => {
 Factory.blueprint("App/Models/Blog" , (faker) => { 
     return { 
         blog_title : faker.sentence({word : 5 }) ,
-        blog_content : faker.paragraph({ sentences : 1 }) 
+        blog_content : faker.paragraph({ sentences : 1 }) ,
+        user_id : faker.integer({min : 1 , max : 10}) ,
+        tag_id : faker.integer({min : 1 , max : 10 })
     }    
 })
 
