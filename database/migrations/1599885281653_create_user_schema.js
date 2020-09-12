@@ -12,7 +12,8 @@ class CreateUserSchema extends Schema {
       table.integer("user_age",3)
       table.string("user_gender",15)
       table.string("user_email").notNullable().unique()
-      table.string("user_password").notNullable()
+      table.string("user_username",30).notNullable().unique()
+      table.string("user_password",30).notNullable()
       table.string("user_bio",255)
 
       table.timestamp('user_timestamps').default(this.fn.now())

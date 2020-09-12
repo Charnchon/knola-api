@@ -1,18 +1,14 @@
 'use strict'
-
-const Database = use('Database')
 const Tag = use('App/Models/Tag')
-const TagUtil = reqire('../../../util/tagUtil')
-
-
+const TagUtil = require('../../../util/tagUtil')
 
 class TagController {
 
     async index({request}) {
         const {references = undefined} = request.qs
         const tagUtil = new TagUtil(Tag)
-        const tags = await tserUtil.getAll(references)
-        return {status:200,error:undefined,data:users}
+        const tags = await tagUtil.getAll(references)
+        return {status:200,error:undefined,data:tags}
     }
 
     async show ({request}) {
@@ -22,9 +18,9 @@ class TagController {
         return {status:200,error:undefined,data:tag}
     }
 
-    async store({ request }) {
+    async store({request}) {
         const {references = undefined} = request.qs
-        const tagUtil = new UserUtil(Tag)
+        const tagUtil = new TagUtil(Tag)
         const tags = await tagUtil.create(request,references)
         return {status:200,error:undefined,data:tags};
     }
