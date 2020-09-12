@@ -12,6 +12,7 @@ class CreateBlogSchema extends Schema {
       table.integer("user_id").unsigned().notNullable()
       table.integer("tag_id").unsigned()
       table.timestamp("blog_date").default(this.fn.now())
+      table.timestamps()
 
       table
         .foreign("user_id")
