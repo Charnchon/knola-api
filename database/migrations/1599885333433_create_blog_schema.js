@@ -9,11 +9,11 @@ class CreateBlogSchema extends Schema {
       table.increments("blog_id")
       table.string('blog_title',120).notNullable()
       table.string('blog_content',255)
-      table.integer("user_id").unsigned().notNullable()
-      table.integer("tag_id").unsigned()
       table.timestamp("blog_date").default(this.fn.now())
       table.timestamps()
-
+      table.integer("user_id").unsigned().notNullable()
+      table.integer("tag_id").unsigned()
+      
       table
         .foreign("user_id")
         .references("users.user_id")
