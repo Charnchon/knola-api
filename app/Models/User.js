@@ -17,6 +17,15 @@ class User extends Model {
         return null
     }
 
+    blog() { 
+        return this.hasMany("App/Models/Blog")    
+    }
+
+    comment() { 
+        return this.hasMany("App/Models/Comment")
+    }
+
+
     static boot () {
         super.boot()
         this.addHook('beforeCreate', 'UserHook.hashPassword')
