@@ -1,6 +1,4 @@
 'use strict'
-
-const Database =  use('Database')
 const User = use('App/Models/User')
 const UserUtil = require('../../../util/userUtil')
 
@@ -20,7 +18,7 @@ class UserController {
         return {status:200,error:undefined,data:user}
     }
 
-    async store({ request }) {
+    async store({request}) {
         const {references = undefined} = request.qs
         const userUtil = new UserUtil(User)
         const users = await userUtil.create(request,references)

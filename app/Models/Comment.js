@@ -3,12 +3,11 @@
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
 const Model = use('Model')
 
-class Tag extends Model {
-    
-    static get primaryKey() { 
-        return 'tag_id'
-    }
+class Comment extends Model {
 
+    static get primaryKey() {
+        return 'comment_id'
+    }
     static get createdAtColumn() {
         return null
     }
@@ -16,11 +15,7 @@ class Tag extends Model {
     static get updatedAtColumn() {
         return null
     }
-
-    blog() { 
-        return this.hasMany("App/Models/Blog")
-    }
     
 }
 
-module.exports = Tag
+module.exports = Comment
