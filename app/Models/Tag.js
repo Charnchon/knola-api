@@ -4,10 +4,11 @@
 const Model = use('Model')
 
 class Tag extends Model {
-
-    static get primaryKey() {
+    
+    static get primaryKey() { 
         return 'tag_id'
     }
+
     static get createdAtColumn() {
         return null
     }
@@ -16,6 +17,10 @@ class Tag extends Model {
         return null
     }
 
+    blog() { 
+        return this.hasMany("App/Models/Blog")
+    }
+    
 }
 
 module.exports = Tag

@@ -23,5 +23,11 @@ Factory.blueprint("App/Models/User" , (faker) => {
         user_email : faker.email() , 
         user_password : faker.word() , 
         user_bio : faker.sentence()
-    }
+    }    
+})
+
+Factory.blueprint("App/Models/Tag" , (faker) => { 
+    return { 
+        tag_name : faker.word({ length: 5 })  
+    }    
 })
