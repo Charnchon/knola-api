@@ -1,6 +1,6 @@
 
 const Validator = use('Validator')
-
+const Hash = use('Hash')
 
 
 class UserUtil {
@@ -31,6 +31,7 @@ class UserUtil {
     async create(request,references) {
         const {user_id} =  await this._User.create(request.body)
         const users = this._User.query().where({user_id:user_id})
+        const hashPassword = await Hash.make(user_password)
         return this._withReferences(users,references).fetch().then(response => response.first())
     }
 
