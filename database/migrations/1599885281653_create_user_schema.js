@@ -16,6 +16,7 @@ class CreateUserSchema extends Schema {
       table.string("user_bio",255)
 
       table.timestamp('user_timestamps').default(this.fn.now())
+      table.timestamps()
     })
   }
 
