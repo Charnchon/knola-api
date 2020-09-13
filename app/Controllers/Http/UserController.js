@@ -1,6 +1,6 @@
 'use strict'
 const User = use('App/Models/User')
-const Hash = use('Hash')
+const Validator = require('../../../service/UserValidator')
 const UserUtil = require('../../../util/userUtil')
 
 class UserController {
@@ -22,6 +22,10 @@ class UserController {
     async store({request}) {
         const {references = undefined} = request.qs
         const userUtil = new UserUtil(User)
+        const validation = await Validator(request.body)
+        if(validation.error){
+            return {status: 422, error: validation.error,data: undefined}
+        }
         const users = await userUtil.create(request,references)
         return {status:200,error:undefined,data:users};
     }

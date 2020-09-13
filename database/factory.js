@@ -20,23 +20,23 @@ Factory.blueprint("App/Models/User" , (faker) => {
         user_last_name : faker.last() , 
         user_age : faker.age() , 
         user_gender : faker.gender() , 
-        user_username : faker.word() , 
+        user_username : faker.word({length:16}) , 
         user_email : faker.email() , 
-        user_password : faker.word({length : 8 }) , 
+        user_password : faker.word({length:8}) , 
         user_bio : faker.sentence()
     }    
 })
 
 Factory.blueprint("App/Models/Tag" , (faker) => { 
     return { 
-        tag_name : faker.word({ length: 5 })  
+        tag_name : faker.word({length:5})  
     }    
 })
 
 
 Factory.blueprint("App/Models/Blog" , (faker) => { 
     return { 
-        blog_title : faker.sentence({word : 5 }) ,
+        blog_title : faker.sentence({word:5}) ,
         blog_content : faker.paragraph({ sentences : 1 }) ,
         user_id : faker.integer({min : 1 , max : 10}) ,
         tag_id : faker.integer({min : 1 , max : 10 })
