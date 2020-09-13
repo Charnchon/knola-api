@@ -1,5 +1,6 @@
 'use strict'
 const Blog = use('App/Models/Blog')
+const Validator = require('../../../service/blogValidator')
 const BlogUtil = require('../../../util/blogUtil')
 
 class BlogController {
@@ -21,6 +22,10 @@ class BlogController {
     async store({request}) {
         const {references = undefined} = request.qs
         const blogUtil = new BlogUtil(Blog)
+        const validation = await Validator(request.body)
+        if(validation.error){
+            return {status: 422, error: validation.error,data: undefined}
+        }
         const blogs = await blogUtil.create(request,references)
         return {status:200,error:undefined,data:blogs};
     }

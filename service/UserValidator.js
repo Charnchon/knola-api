@@ -1,7 +1,6 @@
-
 const Validator = use("Validator")
 
-module.exports = async function teacherValidator (data) {
+module.exports = async function userValidator (data) {
 
     if(typeof data !== 'object') throw new Error()
     const {
@@ -26,4 +25,5 @@ module.exports = async function teacherValidator (data) {
     return {
         error: validation.messages()
     }
+
 }
