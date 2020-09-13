@@ -28,7 +28,7 @@ class User extends Model {
     static boot () {
         super.boot()
         this.addHook('beforeCreate', 'UserHook.hashPassword')
-      }
+    }
     
 }
 

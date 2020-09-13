@@ -1,6 +1,7 @@
 'use strict'
 const User = use('App/Models/User')
 const Validator = require('../../../service/UserValidator')
+const Login = require('../../../service/UserLogin')
 const UserUtil = require('../../../util/userUtil')
 
 class UserController {
@@ -43,6 +44,12 @@ class UserController {
         const userUtil = new UserUtil(User)
         const user = await userUtil.deletById(request,references)
         return {status:200,error:undefined,data:user}
+    }
+
+    async login ({ request, auth }) {
+        const {user_username, user_password} = request.body
+        const users = await auth.attempt(user_username, user_password)
+        return {status:200,error:undefined,data:users}
     }
     
 }

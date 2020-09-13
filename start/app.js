@@ -12,13 +12,12 @@
 */
 const providers = [
   '@adonisjs/framework/providers/AppProvider',
-  // '@adonisjs/auth/providers/AuthProvider',
+  '@adonisjs/auth/providers/AuthProvider',
   '@adonisjs/bodyparser/providers/BodyParserProvider',
   '@adonisjs/cors/providers/CorsProvider',
   '@adonisjs/lucid/providers/LucidProvider',
   '@adonisjs/validator/providers/ValidatorProvider',
   '@adonisjs/vow/providers/VowProvider'
-  
 ]
 
 /*
@@ -56,6 +55,15 @@ const aliases = {}
 | Here you store ace commands for your package
 |
 */
+
 const commands = []
+
+const globalMiddleware = [
+  'Adonis/Middleware/AuthInit'
+]
+
+const namedMiddleware = {
+  auth: 'Adonis/Middleware/Auth'
+}
 
 module.exports = { providers, aceProviders, aliases, commands }
