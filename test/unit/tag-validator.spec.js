@@ -1,6 +1,6 @@
 'use strict'
 
-const {test} = use('Test/Suite')('Example')
+const {test} = use('Test/Suite')('Tag Validator')
 const tagValidator = require('../../service/TagValidator')
 
 test('should return error when it is tag_name is null', async ({assert}) => {

@@ -1,6 +1,6 @@
 'use strict'
 
-const {test} = use('Test/Suite')('Example')
+const {test} = use('Test/Suite')('Blog Validator')
 const blogValidator = require('../../service/BlogValidator')
 
 test('should return error if incorrect data is passed', async ({assert}) => {

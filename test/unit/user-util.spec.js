@@ -1,6 +1,6 @@
 const UserUtil = require("../../util/userUtil")
 const User = use('App/Models/User')
-const { test, trait } = use("Test/Suite")("User Controller")
+const { test, trait } = use("Test/Suite")("User Util")
 trait("Test/ApiClient")
 
 test("should get more than one when get multiple users", async ({ assert }) => {
@@ -20,7 +20,7 @@ test("should return structured data with no references via post method", async (
         user_first_name : 'John',
         user_last_name: 'Doe',
         user_age : '18',
-        user_email: 'johndoeunqiue@gmail.com',
+        user_email: 'johndoeunqiue01@gmail.com',
         user_username: 'johndoe001unqiue',
         user_password: '123456789',
     }
@@ -35,7 +35,7 @@ test("should return structured data with no references via put method", async ({
         user_first_name : 'John',
         user_last_name: 'Doe',
         user_age : '18',
-        user_email: 'johndoeunqiue01@gmail.com',
+        user_email: 'johndoeunqiue02@gmail.com',
         user_username: 'johndoe001unqiue',
         user_password: '123456789',
     }
@@ -56,7 +56,7 @@ test("should return structured data with no references via delete method", async
         user_first_name : 'John',
         user_last_name: 'Doe',
         user_age : '18',
-        user_email: 'johndoeunqiue@gmail.com',
+        user_email: 'johndoeunqiue03@gmail.com',
         user_username: 'johndoe001unqiue',
         user_password: '123456789',
     }
