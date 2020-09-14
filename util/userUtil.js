@@ -1,4 +1,3 @@
-
 const Validator = use('Validator')
 const Hash = use('Hash')
 

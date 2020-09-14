@@ -46,7 +46,7 @@ Factory.blueprint("App/Models/Blog" , (faker) => {
 Factory.blueprint("App/Models/Comment" , (faker) => { 
     return { 
         comment_content : faker.paragraph({ sentences : 1 }) , 
-        user_id : faker.integer({min : 1 , max : 10}) ,
-        blog_id : faker.integer({min : 1 , max : 10 }) 
+        // user_id : faker.integer({min : 1 , max : 10}) ,
+        // blog_id : faker.integer({min : 1 , max : 10 }) 
     }    
 })

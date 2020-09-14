@@ -45,12 +45,6 @@ class UserController {
         const user = await userUtil.deletById(request,references)
         return {status:200,error:undefined,data:user}
     }
-
-    async login ({ request, auth }) {
-        const {user_username, user_password} = request.body
-        const users = await auth.attempt(user_username, user_password)
-        return {status:200,error:undefined,data:users}
-    }
     
 }
 

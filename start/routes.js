@@ -27,7 +27,7 @@ Route.group(() => {
   Route.resource("/blogs", "BlogController")
   Route.resource("/comments", "CommentController")
 
-  Route.post('/login', 'UserController.login')
+  Route.post('/login', 'LoginController.login')
 
   // Route.get("/subjects/:id/teacher", "SubjectController.showTeacher")
   // Route.get("/subjects/:id/enrollment", "SubjectController.showEnrollment")
