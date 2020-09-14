@@ -12,7 +12,7 @@ class CreateCommentSchema extends Schema {
       table.timestamps()
       table.integer("user_id")
       table.integer("blog_id").unsigned()
-      table.foreign("blog_id").references("blogs.blog_id").onDelete("CASCADE").onUpdate("CASCADE")
+      // table.foreign("blog_id").references("blogs.blog_id").onDelete("CASCADE").onUpdate("CASCADE")
 
     })
   }
