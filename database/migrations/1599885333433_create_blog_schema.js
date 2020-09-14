@@ -7,7 +7,7 @@ class CreateBlogSchema extends Schema {
   up () {
     this.create('blogs', (table) => {
       table.increments("blog_id")
-      table.string('blog_title',120).notNullable()
+      table.string('blog_title',120)
       table.string('blog_content',255)
       table.timestamp("blog_date").default(this.fn.now())
       table.timestamps()

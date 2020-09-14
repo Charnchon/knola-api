@@ -58,7 +58,7 @@ test('should return error when username has already used', async ({assert}) => {
     user_last_name: 'Doe',
     user_age : '18',
     user_email: 'johndoeunqiue@gmail.com',
-    user_username: 'johndoe001',
+    user_username: 'johndoeuesed001',
     user_password: '123456789',
   })
   assert.isOk(validateData.error);
@@ -69,7 +69,7 @@ test('should return error when email has already used', async ({assert}) => {
     user_first_name : 'John',
     user_last_name: 'Doe',
     user_age : '18',
-    user_email: 'john@gmail.com',
+    user_email: 'johndoeuesed@gmail.com',
     user_username: 'johndoe001unqiue',
     user_password: '123456789',
   })
