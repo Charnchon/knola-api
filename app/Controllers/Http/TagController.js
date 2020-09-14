@@ -14,7 +14,7 @@ class TagController {
     async show ({request}) {
         const {references = undefined} = request.qs
         const tagUtil = new TagUtil(Tag)
-        const tag = await tagUtil.getById(request,references)
+        const tag = await tagUtil.getById(request.params.id,references)
         return {status:200,error:undefined,data:tag}
     }
 

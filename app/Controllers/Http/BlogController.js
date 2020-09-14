@@ -15,7 +15,7 @@ class BlogController {
     async show ({request}) {
         const {references = undefined} = request.qs
         const blogUtil = new BlogUtil(Blog)
-        const blog = await blogUtil.getById(request,references)
+        const blog = await blogUtil.getById(request.params.id,references)
         return {status:200,error:undefined,data:blog}
     }
 

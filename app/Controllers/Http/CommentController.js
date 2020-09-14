@@ -15,7 +15,7 @@ class CommentController {
     async show ({request}) {
         const {references = undefined} = request.qs
         const commentUtil = new CommentUtil(Comment)
-        const comment = await commentUtil.getById(request,references)
+        const comment = await commentUtil.getById(request.params.id,references)
         return {status:200,error:undefined,data:comment}
     }
 

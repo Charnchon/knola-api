@@ -16,7 +16,7 @@ class UserController {
     async show ({request}) {
         const {references = undefined} = request.qs
         const userUtil = new UserUtil(User)
-        const user = await userUtil.getById(request,references)
+        const user = await userUtil.getById(request.params.id,references)
         return {status:200,error:undefined,data:user}
     }
 

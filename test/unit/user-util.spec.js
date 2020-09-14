@@ -8,9 +8,10 @@ test("should get more than one when get multiple users", async ({ assert }) => {
     assert.isAbove(users.rows.length, 1)
 })
 
-// test("should return object of requested created index from UserUtil.", async ({assert,}) => {
-//     const { user_id } = await UserUtil(UserModel, user_id);
-//     const user = await UserUtil(UserModel).getById(user_id,"")
-//     assert.isOk(user);
-// })
+test("should return object of requested created index from UserUtil.", async ({assert,}) => {
+    const user =  new UserUtil(User)
+    const {user_id} = await user.getById(1)
+    console.log(user_id)
+    assert.isOk(user)
+})
   

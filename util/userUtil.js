@@ -21,8 +21,7 @@ class UserUtil {
         return this._withReferences(users,references).fetch().then(response => response)
     }
 
-    getById (request,references) {
-        const {id} = request.params
+    getById (id,references) {
         const users = this._User.query().where({user_id : id})
         return this._withReferences(users,references).fetch().then(response => response.first())
     }

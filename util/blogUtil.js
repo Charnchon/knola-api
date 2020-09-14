@@ -19,8 +19,7 @@ class BlogUtil {
         return this._withReferences(blogs,references).fetch().then(response => response)
     }
 
-    getById (request,references) {
-        const {id} = request.params
+    getById (id,references) {
         const blogs = this._Blog.query().where({blog_id : id})
         return this._withReferences(blogs,references).fetch().then(response => response.first())
     }

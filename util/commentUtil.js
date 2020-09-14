@@ -19,8 +19,7 @@ class CommentUtil {
         return this._withReferences(comments,references).fetch().then(response => response)
     }
 
-    getById (request,references) {
-        const {id} = request.params
+    getById (id,references) {
         const comments = this._Comment.query().where({comment_id : id})
         return this._withReferences(comments,references).fetch().then(response => response.first())
     }

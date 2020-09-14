@@ -19,8 +19,7 @@ class TagUtil {
         return this._withReferences(tags,references).fetch().then(response => response)
     }
 
-    getById (request,references) {
-        const {id} = request.params
+    getById (id,references) {
         const tags = this._Tag.query().where({tag_id : id})
         return this._withReferences(tags,references).fetch().then(response => response.first())
     }
